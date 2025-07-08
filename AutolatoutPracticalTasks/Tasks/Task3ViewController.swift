@@ -55,15 +55,37 @@ final class Task3ViewController: UIViewController {
         setupLabels()
         setupTextFields()
         setupButton()
+        
+        [usernameField, passwordField, logInButton].forEach {
+            $0.setContentCompressionResistancePriority(.required, for: .vertical)
+        }
+
+        [titleLabel, bodyLabel].forEach {
+            $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        }
     }
     
     private func setupLabels() {
-        titleLabel.text = "Sign In"
+        titleLabel.text = "Sign In Sign In Sign In Sigvvn In v vSign In Sign In"
         titleLabel.font = .boldSystemFont(ofSize: 32)
-        bodyLabel.numberOfLines = 3
+        bodyLabel.numberOfLines = 0
         bodyLabel.text = """
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore
+                sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore
         """
     }
     
@@ -104,10 +126,12 @@ final class Task3ViewController: UIViewController {
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             bottomConstraint,
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
